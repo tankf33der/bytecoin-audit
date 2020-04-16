@@ -1,2 +1,3 @@
 SANs + TIS:
-blake - ok
+blake   - ok
+groestl - ok
