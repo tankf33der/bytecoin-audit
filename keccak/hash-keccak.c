@@ -12,7 +12,7 @@
 void KeccakF1600_StatePermute(void *state);  // Forward declarations from keccak/ folder
 
 // Our Non Standard variant
-static int keccak(const uint8_t *in, size_t inlen, uint8_t *md, size_t mdlen) {
+int keccak(const uint8_t *in, size_t inlen, uint8_t *md, size_t mdlen) {
 	struct cryptoKeccakState st;
 	uint8_t temp[144];
 	size_t rsiz = sizeof(struct cryptoKeccakState) == mdlen ? HASH_DATA_AREA : 200 - 2 * mdlen;
