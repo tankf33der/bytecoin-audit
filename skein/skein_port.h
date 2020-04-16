@@ -38,15 +38,15 @@
     faster operations on longer variables to be used.  In all these
     defines 'size' must be a power of 2 and >= 8
 
-    dec_unit_type(size,x)       declares a variable 'x' of length 
+    dec_unit_type(size,x)       declares a variable 'x' of length
                                 'size' bits
 
-    dec_bufr_type(size,bsize,x) declares a buffer 'x' of length 'bsize' 
+    dec_bufr_type(size,bsize,x) declares a buffer 'x' of length 'bsize'
                                 bytes defined as an array of variables
-                                each of 'size' bits (bsize must be a 
+                                each of 'size' bits (bsize must be a
                                 multiple of size / 8)
 
-    ptr_cast(x,size)            casts a pointer to a pointer to a 
+    ptr_cast(x,size)            casts a pointer to a pointer to a
                                 varaiable of length 'size' bits
 */
 
@@ -74,7 +74,7 @@ typedef uint64_t        u64b_t;             /* 64-bit unsigned integer */
  *    Skein_Swap64
  *
  * If SKEIN_NEED_SWAP is defined at compile time, it is used here
- * along with the portable versions of Put64/Get64/Swap64, which 
+ * along with the portable versions of Put64/Get64/Swap64, which
  * are slow in general.
  *
  * Otherwise, an "auto-detect" of endianness is attempted below.
@@ -85,7 +85,7 @@ typedef uint64_t        u64b_t;             /* 64-bit unsigned integer */
 #ifndef SKEIN_NEED_SWAP /* compile-time "override" for endianness? */
 
 
-#include "../int-util.h" // TODO - take original implementation
+#include "int-util.h" // TODO - take original implementation
 
 #define IS_BIG_ENDIAN      4321 /* byte 0 is most significant (mc68k) */
 #define IS_LITTLE_ENDIAN   1234 /* byte 0 is least significant (i386) */
